@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bootstrap Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@100;200;300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./dist/bootstrap.css">
+    <link rel="stylesheet" href="./dist/style.css">
+    <script src="./js/lang.js"></script>
+</head>
+<body>
+<header class="border-bottom sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-lg-0">
+        <div class="container justify-content-end">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                    aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav my-2 my-lg-0 navbar-nav-scroll col-lg-4">
+                    <li class="nav-item">
+                        <a class="nav-link active px-lg-0 py-lg-4 me-lg-4" aria-current="page" id="photos"
+                           href="#Photos">Photos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-lg-0 py-lg-4 me-lg-4" id="videos" href="#Videos">Videos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-lg-0 py-lg-4 me-lg-4" id="podcast" href="#Podcasts">Podcasts</a>
+                    </li>
+                </ul>
+
+                <form action="#" class="d-flex w-100">
+                    <div class="input-group rounded rounded-5 bg-secondary bg-opacity-10">
+                        <button class="btn bg-transparent" type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                        <input type="search" class="form-control border-0 bg-transparent" placeholder="Поиск"
+                               aria-label="Search"
+                               aria-describedby="search-addon"/>
+                    </div>
+                </form>
+
+                <ul class="navbar-nav not-active my-2 my-lg-0 navbar-nav-scroll col-12 col-lg-2 justify-content-end">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle main-lang" href="#" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            English
+                        </a>
+                        <ul class="dropdown-menu dropdown-lang">
+                            <li><a class="dropdown-item d-none" href="#en">English</a></li>
+                            <li><a class="dropdown-item" href="#uk">Українська</a></li>
+                            <li><a class="dropdown-item" href="#pl">Polski</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link pe-lg-0 ps-lg-4 singIn" id="singIn" data-bs-toggle="modal"
+                           data-bs-target="#singInModal">Sign in</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div class="container">
+    <div class="row flex-row flex-nowrap">
+        <aside class="col-auto col-md-3 ps-sm-0 pt-sm-2 pt-sm-4 bg-light">
+            <nav class="navbar navbar-expand-lg navbar-light mt-sm-3 w-sm-100 pt-sm-2 sticky-top">
+                <ul class="nav navbar-nav nav-pills flex-column mb-0 align-items-center align-items-sm-start w-sm-100">
+                    <li class="nav-item w-sm-100">
+                        <a href="#allPhotos" class="nav-link active align-middle px-3 py-1">
+                            <i class="bi bi-image fs-5"></i>
+                            <span id="allPhotosLang" class="ms-1 d-none d-sm-inline fw-bold allPhotosLang">All photos</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item w-sm-100">
+                        <a href="#Selfies" class="nav-link align-middle  px-3 py-1">
+                            <i class="bi bi-emoji-smile fs-5"></i>
+                            <span id="selfies" class="ms-1 d-none d-sm-inline fw-bold">Selfies</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item w-sm-100">
+                        <a href="#Recent" class="nav-link align-middle  px-3 py-1">
+                            <i class="bi bi-clock fs-5"></i>
+                            <span id="recent" class="ms-1 d-none d-sm-inline fw-bold">Recent</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item w-sm-100">
+                        <a href="#Deleted" class="nav-link align-middle  px-3 py-1">
+                            <i class="bi bi-trash3 fs-5"></i>
+                            <span id="deleted" class="ms-1 d-none d-sm-inline fw-bold">Deleted</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="col-9 col-lg-8 ms-lg-auto mt-sm-4 pt-sm-3 pb-5">
+            <section class="d-flex flex-wrap justify-content-between">
+                <div class="col-12 col-sm-6">
+                    <h1 class="fw-bold mt-1 allPhotosLang">All photos</h1>
+                    <small class="lengthItems">150 items</small>
+                </div>
+                <div class="col-12 col-sm-6 d-flex justify-content-end align-items-center pb-3">
+                    <div class="btn-group ms-auto" role="group" aria-label="Basic outlined example">
+                        <button type="button" class="btn active btn-outline-dark filterBtn">Newest</button>
+                        <button type="button" class="btn btn-outline-dark filterBtn">Latest</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="row row-cols-1 row-cols-md-2 gy-4 mt-sm-2">
+                <article>
+                    <div class="card">
+                        <img src="./img/1.jpg" class="card-img-top" alt="Image 1">
+                        <div class="card-body pb-1">
+                            <h4 class="card-title">Heading</h4>
+                            <p class="card-text">Here goes some sample, example text that is relatively short.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-primary mb-2 w-lg-auto mb-md-2 mb-sm-0 me-sm-3 text-white w-100 w-md-100 w-sm-auto mb-lg-0">Save to collection</a>
+                            <a href="#" class="btn btn-outline-secondary w-100 w-sm-auto w-md-100 w-lg-auto">Share</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article>
+                    <div class="card">
+                        <img src="./img/2.jpg" class="card-img-top" alt="Image 2">
+                        <div class="card-body pb-1">
+                            <h4 class="card-title">Heading</h4>
+                            <p class="card-text">And here full text doesn’t fit, and at the very end of it we should
+                                show a truncation. It should be "..." at the end.</p>
+                            <span class="showMore">Show more...</span>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-primary mb-2 w-lg-auto mb-md-2 mb-sm-0 me-sm-3 text-white w-100 w-md-100 w-sm-auto mb-lg-0">Save to collection</a>
+                            <a href="#" class="btn btn-outline-secondary w-100 w-sm-auto w-md-100 w-lg-auto">Share</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article>
+                    <div class="card">
+                        <img src="./img/3.png" class="card-img-top" alt="Image 3">
+                        <div class="card-body pb-1">
+                            <h4 class="card-title">Heading</h4>
+                            <p class="card-text">And here full text doesn’t fit, and at the very end of it we should
+                                show a truncation. It should be "..." at the end.</p>
+                            <span class="showMore">Show more...</span>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-primary mb-2 w-lg-auto mb-md-2 mb-sm-0 me-sm-3 text-white w-100 w-md-100 w-sm-auto mb-lg-0">Save to collection</a>
+                            <a href="#" class="btn btn-outline-secondary w-100 w-sm-auto w-md-100 w-lg-auto">Share</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article>
+                    <div class="card">
+                        <img src="./img/4.png" class="card-img-top" alt="Image 4">
+                        <div class="card-body pb-1">
+                            <h4 class="card-title">Heading</h4>
+                            <p class="card-text">Here goes some sample, example text that is relatively short.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-primary mb-2 w-lg-auto mb-md-2 mb-sm-0 me-sm-3 text-white w-100 w-md-100 w-sm-auto mb-lg-0">Save to collection</a>
+                            <a href="#" class="btn btn-outline-secondary w-100 w-sm-auto w-md-100 w-lg-auto">Share</a>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </main>
+    </div>
+</div>
+
+<footer class="pt-3 pb-5 navbar-dark bg-dark text-white border border-top border-secondary">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <span class="pe-4">Themes:</span>
+                <button class="btn border text-white changeTheme">
+                    <i class="bi bi-brightness-high-fill"></i>
+                    <i class="bi bi-moon-fill"></i>
+                </button>
+            </div>
+            <div class="col-12 col-md-6 text-end">
+            <span>
+                Created by
+                <a href="https://www.linkedin.com/in/denis-denisenko/" target="_blank">Denys Denysenko</a>
+            </span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="modal fade" id="singInModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+     aria-labelledby="singInModalTitle" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5 singIn" id="singInModalTitle">Sign In</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="">
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control rounded-3" id="floatingInput"
+                               placeholder="name@example.com">
+                        <label for="floatingInput">Email address</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control rounded-3" id="floatingPassword"
+                               placeholder="Password">
+                        <label for="floatingPassword">Password</label>
+                    </div>
+                    <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary text-white singIn" type="submit">Sign In</button>
+                    <small class="text-muted">By clicking Sign In, you agree to the terms of use.</small>
+                    <hr class="my-4">
+                    <h2 class="fs-5 fw-bold mb-3">Or use a third-party</h2>
+                    <button class="w-100 py-2 mb-2 btn btn-outline-dark rounded-3" type="submit">
+                        <svg class="bi me-1" width="16" height="16">
+                            <use xlink:href="#twitter"></use>
+                        </svg>
+                        Sign in with Twitter
+                    </button>
+                    <button class="w-100 py-2 mb-2 btn btn-outline-info rounded-3" type="submit">
+                        <svg class="bi me-1" width="16" height="16">
+                            <use xlink:href="#facebook"></use>
+                        </svg>
+                        Sign in with Facebook
+                    </button>
+                    <button class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3" type="submit">
+                        <svg class="bi me-1" width="16" height="16">
+                            <use xlink:href="#github"></use>
+                        </svg>
+                        Sign in with GitHub
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+<script src="./js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+@import "./new-variable";
+//@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins/breakpoints";
+
+
+@mixin make-width-response($columns: $grid-columns, $gutter: $grid-gutter-width, $breakpoints: $grid-breakpoints) {
+  @each $breakpoint in map-keys($breakpoints) {
+    $infix: breakpoint-infix($breakpoint, $breakpoints);
+
+    @include media-breakpoint-up($breakpoint, $breakpoints) {
+      .w#{$infix}-auto {
+        width: auto !important;
+      }
+      .w#{$infix}-100 {
+        width: 100% !important;
+      }
+    }
+  }
+}
+
+@if $enable-grid-classes {
+  @include make-width-response();
+}

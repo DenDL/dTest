@@ -1,0 +1,50 @@
+$grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px
+);
+
+$container-max-widths: (
+        sm: 540px,
+        md: 720px,
+        lg: 960px,
+        xl: 1140px
+);
+
+$enable-grid-classes:               true;
+
+$grid-columns:                      12;
+$grid-gutter-width:                 1.5rem;
+
+$gray-600:                          #666666;
+$gray-900:                          #292929;
+$secondary:                         $gray-600;
+$spacer:                            1rem;
+
+$blue:                              #0d6efd;
+$orange:                            #ED7135;
+$primary:                           $orange;
+$info:                              $blue;
+
+$headings-font-weight:              700;
+$font-weight-bold:                  700;
+$btn-font-weight:                   $font-weight-bold;
+$font-family-sans-serif:            "Commissioner", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+
+$card-spacer-y:                     $spacer * 1.2;
+$card-spacer-x:                     $spacer * 1.4;
+$card-cap-padding-y:                $card-spacer-y;
+$card-cap-padding-x:                $spacer;
+
+$card-height:                       100%;
+$card-color:                        $secondary;
+
+$paragraph-margin-bottom:           .5rem;
+
+$input-btn-padding-x:               .95rem;
+
+$border-color-translucent:          #EBEBEB;
+
+

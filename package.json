@@ -1,0 +1,16 @@
+{
+  "name": "d-test",
+  "version": "1.0.0",
+  "description": "Test task for djinni.co",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --output-style compressed -o dist src/scss"
+  },
+  "author": "Denys Denysenko",
+  "license": "ISC",
+  "devDependencies": {
+    "bootstrap": "^5.2.3",
+    "node-sass": "^8.0.0"
+  }
+}
