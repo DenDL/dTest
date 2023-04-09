@@ -103,7 +103,7 @@ const changeThemeHandler = (changeTheme) => (e) => {
     let navFull = document.querySelectorAll('.navbar-light');
     let bgFull = document.querySelectorAll('.bg-light');
     let cardFull = document.querySelectorAll('.card');
-    let textFull = document.querySelectorAll('.card-title, .card-text, .showMore, .card .btn-outline-secondary, .bi-search');
+    let textFull = document.querySelectorAll('.card-title, .card-text, .showMore, .card .btn, .bi-search');
 
     document.querySelector('body').classList.toggle('bg-secondary');
 
@@ -187,7 +187,7 @@ const generateCard = (item) => {
                         </div>
                         <div class="card-footer">
                             <a href="#"
-                               class="btn btn-primary mb-2 w-lg-auto mb-md-2 mb-sm-0 me-sm-3 text-white w-100 w-md-100 w-sm-auto mb-lg-0 text-body">
+                               class="btn btn-primary mb-2 w-lg-auto mb-md-2 mb-sm-0 me-sm-3 w-100 w-md-100 w-sm-auto mb-lg-0 ${ themeDark ? '' : 'text-white' }">
                                Save to collection
                                </a>
                             <a href="#" class="btn btn-outline-secondary w-100 w-sm-auto w-md-100 w-lg-auto ${ themeDark ? 'text-white' : '' }">Share</a>
