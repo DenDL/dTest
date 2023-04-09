@@ -92,15 +92,18 @@ addListener(cardButton, "click", clickButtonsInCard());
 // change themes dark / light
 
 const changeTheme = document.querySelectorAll('.changeTheme');
+let themeDark = false;
 const changeThemeHandler = (changeTheme) => (e) => {
     changeTheme.forEach(item => {
         item.classList.toggle('dark');
-    })
+    });
+
+    themeDark = !themeDark;
 
     let navFull = document.querySelectorAll('.navbar-light');
     let bgFull = document.querySelectorAll('.bg-light');
     let cardFull = document.querySelectorAll('.card');
-    let textFull = document.querySelectorAll('.card-title, .card-text, .showMore, .card .btn, .bi-search');
+    let textFull = document.querySelectorAll('.card-title, .card-text, .showMore, .card .btn-outline-secondary, .bi-search');
 
     document.querySelector('body').classList.toggle('bg-secondary');
 
@@ -126,8 +129,6 @@ let url = new URLSearchParams(window.location.search),
     numberPage = Number(url.get("page")) || 1;
 
 const changeLimitHandler = () => (e) => {
-    e.preventDefault();
-    e.stopPropagation();
     let clickItem = e.target;
     document.querySelector('.dataLimitActive').innerHTML = clickItem.innerHTML;
     limit = Number(clickItem.innerHTML)
@@ -173,23 +174,23 @@ const generateListContent = (List) => {
 
 const generateCard = (item) => {
     return `<article id="${'card' + item.id}">
-                    <div class="card">
+                    <div class="card ${ themeDark ? 'bg-secondary' : '' }">
                         <img src="${item.download_url}" class="card-img-top" alt="${item.author}">
                         <div class="card-body pb-1">
-                            <h4 class="card-title">${item.author}</h4>
-                            <p class="card-text">
+                            <h4 class="card-title ${ themeDark ? 'text-white' : '' }">${item.author}</h4>
+                            <p class="card-text ${ themeDark ? 'text-white' : '' }">
                                 Width: ${item.width}<br />
                                 Height: ${item.height}<br />
                                 <a href="${item.url}" target="_blank">Download</a>
                             </p>
-                            <span class="showMore">Show more...</span>
+                            <span class="showMore ${ themeDark ? 'text-white' : '' }">Show more...</span>
                         </div>
                         <div class="card-footer">
                             <a href="#"
-                               class="btn btn-primary mb-2 w-lg-auto mb-md-2 mb-sm-0 me-sm-3 text-white w-100 w-md-100 w-sm-auto mb-lg-0">
+                               class="btn btn-primary mb-2 w-lg-auto mb-md-2 mb-sm-0 me-sm-3 text-white w-100 w-md-100 w-sm-auto mb-lg-0 text-body">
                                Save to collection
                                </a>
-                            <a href="#" class="btn btn-outline-secondary w-100 w-sm-auto w-md-100 w-lg-auto">Share</a>
+                            <a href="#" class="btn btn-outline-secondary w-100 w-sm-auto w-md-100 w-lg-auto ${ themeDark ? 'text-white' : '' }">Share</a>
                         </div>
                     </div>
                 </article>`;
@@ -199,24 +200,24 @@ const generatePagination = (page) => {
     let bodyPagination = `<nav class="w-100 mt-5" aria-label="Page navigation">
               <ul class="pagination justify-content-center">
                 <li class="page-item ${page > 1 ? '' : 'disabled'}">
-                    <a class="page-link bg-light" data-number-page="${ page - 1}" href="#">Previous</a>
+                    <a class="page-link ${ themeDark ? 'bg-dark' : 'bg-light' }" data-number-page="${ page - 1}" href="#">Previous</a>
                 </li>`;
 
     if (page > 2) {
-        bodyPagination += `<li class="page-item"><a class="page-link bg-light" href="#">...</a></li>`
+        bodyPagination += `<li class="page-item"><a class="page-link ${ themeDark ? 'bg-dark' : 'bg-light' }" href="#">...</a></li>`
     }
 
     let n = 0
 
     for ( n ; n <= page + 1; n++ ) {
         if (n >= page - 1 && n > 0) {
-            bodyPagination += `<li class="page-item"><a class="page-link ${ n == page ? 'active' : 'bg-light' }" data-number-page="${ n }" href="#">${ n }</a></li>`
+            bodyPagination += `<li class="page-item"><a class="page-link ${ n == page ? 'active' : themeDark ? 'bg-dark' : 'bg-light' }" data-number-page="${ n }" href="#">${ n }</a></li>`
         }
     }
 
-    bodyPagination += `<li class="page-item"><a class="page-link bg-light" href="#">...</a></li>
+    bodyPagination += `<li class="page-item"><a class="page-link ${ themeDark ? 'bg-dark' : 'bg-light' }" href="#">...</a></li>
                 <li class="page-item">
-                  <a class="page-link bg-light" data-number-page="${ page + 1 }" href="#">Next</a>
+                  <a class="page-link ${ themeDark ? 'bg-dark' : 'bg-light' }" data-number-page="${ page + 1 }" href="#">Next</a>
                 </li>
               </ul>
             </nav>`
